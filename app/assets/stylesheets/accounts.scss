@@ -1,3 +1,18 @@
 // Place all the styles related to the Accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: #fafafa !important;
+}
+
+.account-summary {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.follower-suggestions {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}

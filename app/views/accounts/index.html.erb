@@ -8,16 +8,27 @@
             <%= link_to post.account.username, profile_path(post.account), class: 'text-dark' %>
           </div>
           <%= image_tag post.image.url, class: 'img img-fluid' %>
+
+          <div class="post-details">
+            <p><strong><%= post.total_likes %> likes</strong></p>
+            <p><strong><%= link_to post.account.username, profile_path(post.account), class: 'text-dark' %></strong></p>
+            <%= simple_format post.description %>
+            <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+          </div>
         </div>
       <% end %>
     </div>
     <div class="col-4">
       <div class="account-summary">
-        <p><strong><%= current_account.username %></strong></p> <br>
-        <%= current_account.fullname %>
+        <p>
+          <%= link_to image_tag(current_account.image.thumb.url, class: 'profile-pic'), profile_path(current_account) if current_account.image.present? %>
+          <strong><%= current_account.username %></strong>
+        </p>
+        <p><%= current_account.fullname %></p>
       </div>
       <div class="follower-suggestions">
-        
+        <%= link_to 'View All', '', class: 'float-right text-dark' %>
+        <p class="text-muted">Suggestions for you</p>
       </div>
     </div>
   </div>

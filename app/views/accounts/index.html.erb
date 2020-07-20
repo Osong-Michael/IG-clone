@@ -10,6 +10,12 @@
           <%= image_tag post.image.url, class: 'img img-fluid' %>
 
           <div class="post-details">
+          
+            <div class="post-actions">
+              <i class="fa fa-heart like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id)%> fa-2x post-like" data-id="<%= post.id %>"></i>
+              <i class="fa fa-comment fa-2x post-comment"></i>
+            </div>
+           
             <p><strong><%= post.total_likes %> likes</strong></p>
             <p><strong><%= link_to post.account.username, profile_path(post.account), class: 'text-dark' %></strong></p>
             <%= simple_format post.description %>

@@ -23,3 +23,21 @@
   padding: 15px;
   border: 1px solid #ddd;
 }
+
+.post-actions {
+  margin-bottom: 20px;
+
+  i {
+    margin-right: 10px;
+    color: #ddd;
+    cursor: pointer;
+  }
+
+  i:hover {
+    color: #999;
+  }
+
+  i.active {
+    color: red;
+  }
+}

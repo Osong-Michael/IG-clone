@@ -6,6 +6,7 @@ class Account < ApplicationRecord
 
   mount_uploader :image, ImageUploader
   has_many :posts
+  has_many :likes
 
   def fullname
     "#{first_name} #{last_name}"

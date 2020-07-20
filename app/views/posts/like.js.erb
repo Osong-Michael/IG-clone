@@ -1,0 +1,7 @@
+
+var me = ".like-<%= @post_id %>"
+<% if @success == true %>
+  $(me).addClass('active');
+<% else %>
+  $(me).removeClass('active');
+<% end %>

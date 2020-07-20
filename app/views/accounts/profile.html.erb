@@ -1,15 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <%= image_tag @account.image.url, width: '200px', class: 'profile-pic' %>
+      <%= profile_picture(@account, 200) %>
     </div>
 
     <div class="col-8 text-left">
       <h1><%= @account.fullname%></h1>
-      <%= link_to 'Edit Profile', edit_account_registration_path, class: 'btn btn-secondary' %>
-      <div class="profile-stats"><%= pluralize(@account.posts.count, 'post') %></div>
-      <div class="profile-stats"><%= pluralize(@account.total_followers, 'follower') %></div>
-      <div class="profile-stats"><%= pluralize(@account.total_following, 'following') %></div>
+      <%= link_to 'Edit Profile', edit_account_registration_path, class: 'btn btn-secondary' if actual_user?(@account.id) %>
+      
+      <div class="row profile-stats">
+        <div class="col-4">
+          <%= pluralize(@account.posts.count, 'post') %>
+        </div>
+        <div class="col-4">
+          <%= pluralize(@account.total_followers, 'follower') %>
+        </div>
+        <div class="col-4">
+          <%= pluralize(@account.total_following, 'following') %>
+        </div>
+      </div>
 
       <p><%= @account.fullname %></p>
       <%= simple_format @account.description %>

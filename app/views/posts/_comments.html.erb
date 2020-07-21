@@ -1,4 +1,6 @@
-<% @comments.each do |comment| %>
+
+
+<% post.comments.each do |comment| %>
   <div class="comments">
   <%= link_to profile_picture(comment.account, 35), profile_path(comment.account) %>
     <strong><%= comment.account.username %></strong>

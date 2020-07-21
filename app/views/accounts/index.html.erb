@@ -1,0 +1,58 @@
+<div class="container top-margin">
+  <div class="row">
+    <div class="col-8">
+      <% @posts.each do |post| %>
+        <div class="insta-post">
+          <div class="post-meta">
+            <%= link_to image_tag(post.account.image.thumb.url, class: 'profile-pic'), profile_path(post.account) %>
+            <%= link_to post.account.username, profile_path(post.account), class: 'text-dark' %>
+          </div>
+          <%= image_tag post.image.url, class: 'img img-fluid pf' %>
+
+          <div class="post-details">
+            <div class="post-actions">
+              <i class="fa fa-heart like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id)%> fa-2x post-like" data-id="<%= post.id %>"></i>
+              <%= link_to post_path(post.id) do %>
+                <i class="fa fa-comment fa-2x post-comment"></i>
+              <% end %>
+            </div>
+           
+            <p><strong id="post-<%= post.id%>-likes"><%= pluralize(post.total_likes_count, 'like') %></strong></p>
+            <p><strong id="post-<%= post.id%>-comments"><%= link_to post.account.username, profile_path(post.account), class: 'text-dark' %></strong></p>
+            <%= simple_format post.description %>
+            <p class="text-muted pull"><%= time_ago_in_words post.created_at %> ago</p>
+            <%= render 'posts/comments', post: post %>
+          </div>
+          <div class="comment-box">
+            <%= form_for @comment do |f| %>
+              <%= f.hidden_field :post_id, value: post.id %>
+              <div class="input-group">
+                <%= f.text_field :comment, placeholder: 'Add comment here...', class: 'form-control post-comment' %>
+                <div class="input-group-append">
+                  <%= f.submit "Post", class: 'btn btn-info float-right' %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-4 position-fixed stick">
+      <div class="account-summary">
+        <p class="m-0">
+          <%= link_to side_picture(current_account), profile_path(current_account) %>
+          <strong><%= current_account.username %></strong></br >
+          <%= current_account.fullname %>
+        </p>
+      </div>
+      <div class="follower-suggestions">
+        <%= link_to 'View All', '', class: 'float-right text-dark' %>
+        <p class="text-muted">Suggestions for you</p>
+        <%= render 'accounts/follower_suggestions' %>
+      </div>
+      <footer>
+        <p class="text-muted text-center mt-2"> © 2020 OA7 Clone</p>
+      </footer>
+    </div>
+  </div>
+</div>

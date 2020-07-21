@@ -1,0 +1,9 @@
+
+var me = ".like-<%= @post_id %>";
+<% if @success == true %>
+  $(me).addClass('active');
+<% else %>
+  $(me).removeClass('active');
+<% end %>
+
+$("#post-<%= @post_id %>-likes").text("<%= pluralize(@post_likes, 'like') %>");

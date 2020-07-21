@@ -1,0 +1,51 @@
+<div class="container top-margin">
+  <div class="row">
+    <div class="col-4">
+      <%= profile_picture(@account, 200, 190) %>
+    </div>
+
+    <div class="col-8 text-left">
+    <div class="row">
+      <div class="col-6">
+        <%= link_to 'Edit Profile', edit_account_registration_path, class: 'btn btn-muted btn-custom float-right' if actual_user?(@account.id) %>
+        <h1><%= @account.fullname%></h1>
+      </div>
+    </div>
+      
+      
+      <div class="row profile-stats">
+        <div class="col-4">
+          <%= pluralize(@account.posts.count, 'post') %>
+        </div>
+        <div class="col-4">
+          <%= pluralize(@account.total_followers, 'following') %>
+        </div>
+        <div class="col-4">
+          <%= pluralize(@account.total_following, 'follower') %>
+        </div>
+      </div>
+
+      <p><%= @account.fullname %></p>
+      <%= simple_format @account.description %>
+      <p><%= link_to @account.website if @account.website.present? %></p>
+    </div>
+  </div>
+
+  <div class="row profile-posts">
+    <% @posts.each do |post| %>
+      <div class="col-4">
+        <div class="insta-post post-square" style="background: url(<%= post.image.url %>) no-repeat center top">
+          <%= link_to post_path(post) do %>
+            <div class="post-stats"> 
+              <div class="inner">
+                <i class="fa fa-heart"></i> <%= post.total_likes_count %>
+                <i class="fa fa-comment ml-4"></i> <%= post.total_comments_count %>
+              </div>
+            </div>
+          <% end %>
+          
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

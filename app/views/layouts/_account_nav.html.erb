@@ -1,0 +1,22 @@
+<ul class="navbar-nav ml-auto">
+  <li class="nav-item">
+    <%= link_to dashboard_path, class: 'nav-link' do %>
+      <i class="fas fa-house-user fa-2x"></i>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to new_post_path, class: 'nav-link' do %>
+      <i class="far fa-plus-square"> New Post</i>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to profile_path(current_account), class: 'nav-link' do %>
+      <i class="fas fa-address-card"> My Profile</i>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to destroy_account_session_path, method: :delete, class: 'nav-link' do %>
+      <i class="fas fa-sign-out-alt">Sign Out</i>
+    <% end %>
+  </li>
+</ul>

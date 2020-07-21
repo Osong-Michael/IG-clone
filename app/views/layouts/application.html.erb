@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>InstaClone</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Insta Clone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/640b8b4dbe.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navigation' %>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

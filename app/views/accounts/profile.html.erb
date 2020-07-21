@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container top-margin">
   <div class="row">
     <div class="col-4">
       <%= profile_picture(@account, 200) %>
@@ -18,10 +18,10 @@
           <%= pluralize(@account.posts.count, 'post') %>
         </div>
         <div class="col-4">
-          <%= pluralize(@account.total_followers, 'follower') %>
+          <%= pluralize(@account.total_followers, 'following') %>
         </div>
         <div class="col-4">
-          <%= pluralize(@account.total_following, 'following') %>
+          <%= pluralize(@account.total_following, 'follower') %>
         </div>
       </div>
 

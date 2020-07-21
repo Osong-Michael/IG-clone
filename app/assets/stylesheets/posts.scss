@@ -1,7 +1,19 @@
 .insta-post {
   margin-bottom: 15px;
+
+  .pf {
+    width: 100%;
+    height: auto;
+  }
 }
 
+.top-margin {
+  margin-top: 100px;
+}
+
+.stick {
+  margin-left: 55%;
+}
 
 
 
@@ -10,7 +22,7 @@
   text-align: left;
   font-weight: bold;
   padding: 10px;
-  border: 1px solid #999;
+  border: 1px solid #edf5ef;
 
 
   img {
@@ -61,6 +73,8 @@
 .comments-feed {
   height: 300px;
   overflow: scroll;
+  overflow-x: hidden;
+  // overflow-y: hidden;
 }
 
 .post-details .post-actions {
@@ -100,5 +114,8 @@
 
 .push {
   margin-left: 40px;
+  font-size: 10px;
+  text-transform: uppercase;
 }
+
 

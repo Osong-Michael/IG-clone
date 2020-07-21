@@ -29,7 +29,7 @@
               <div class="input-group">
                 <%= f.text_field :comment, placeholder: 'Add comment here...', class: 'form-control post-comment' %>
                 <div class="input-group-append">
-                  <%= f.submit "Post", class: 'btn btn-success float-right' %>
+                  <%= f.submit "Post", class: 'btn btn-info float-right' %>
                 </div>
               </div>
             <% end %>
@@ -40,7 +40,6 @@
     <div class="col-4 position-fixed stick">
       <div class="account-summary">
         <p class="m-0">
-          <%#= link_to image_tag(current_account.image.thumb.url, class: 'profile-pic float-left mr-2'), profile_path(current_account) if current_account.image.present? %>
           <%= link_to side_picture(current_account), profile_path(current_account) %>
           <strong><%= current_account.username %></strong></br >
           <%= current_account.fullname %>

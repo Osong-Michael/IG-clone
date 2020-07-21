@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.account_id = current_account.id if account_signed_in?
     if @post.save 
-      flash[:success] = 'Post was successfully created'
+      flash[:primary] = 'Post was successfully created'
       redirect_to dashboard_path
     else
       flash.now[:danger] = 'Post not saved'

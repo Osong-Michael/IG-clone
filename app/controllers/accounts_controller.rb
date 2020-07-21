@@ -24,7 +24,7 @@ class AccountsController < ApplicationController
   def follow_account
     follower_id = params[:follow_id]
     if Follower.create(follower_id: current_account.id, following_id: follower_id)
-      flash[:success] = 'You now follow this account'
+      flash[:primary] = 'You now follow this account'
     else
       flash[:danger] = 'You cannot follow this account'
     end

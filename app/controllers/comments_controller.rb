@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
     if @comment.save 
       return_url = params[:comment][:return_to].present? ? post_path(@comment.post_id) : dashboard_path
-      redirect_to return_url, flash: {success: 'Comment added successfully'}
+      redirect_to return_url, flash: {primary: 'Comment added successfully'}
     else
       redirect_to dashboard_path, flash: {danger: 'Comment was not created'}
     end

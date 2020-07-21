@@ -15,3 +15,7 @@
 //= require activestorage
 //= require bootstrap.min
 //= require_tree .
+
+$(document).on(function() {
+  $('.alert').alert()
+})

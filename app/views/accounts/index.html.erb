@@ -8,10 +8,8 @@
             <%= link_to post.account.username, profile_path(post.account), class: 'text-dark' %>
           </div>
           <%= image_tag post.image.url, class: 'img img-fluid pf' %>
-          <%#= cl_image_tag(post.image.url, :width => 500, :crop => "pad") %>
 
           <div class="post-details">
-          
             <div class="post-actions">
               <i class="fa fa-heart like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id)%> fa-2x post-like" data-id="<%= post.id %>"></i>
               <%= link_to post_path(post.id) do %>
@@ -22,7 +20,7 @@
             <p><strong id="post-<%= post.id%>-likes"><%= pluralize(post.total_likes_count, 'like') %></strong></p>
             <p><strong id="post-<%= post.id%>-comments"><%= link_to post.account.username, profile_path(post.account), class: 'text-dark' %></strong></p>
             <%= simple_format post.description %>
-            <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+            <p class="text-muted pull"><%= time_ago_in_words post.created_at %> ago</p>
             <%= render 'posts/comments', post: post %>
           </div>
           <div class="comment-box">
@@ -42,7 +40,8 @@
     <div class="col-4 position-fixed stick">
       <div class="account-summary">
         <p class="m-0">
-          <%= link_to image_tag(current_account.image.thumb.url, class: 'profile-pic float-left mr-2'), profile_path(current_account) if current_account.image.present? %>
+          <%#= link_to image_tag(current_account.image.thumb.url, class: 'profile-pic float-left mr-2'), profile_path(current_account) if current_account.image.present? %>
+          <%= link_to side_picture(current_account), profile_path(current_account) %>
           <strong><%= current_account.username %></strong></br >
           <%= current_account.fullname %>
         </p>

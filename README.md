@@ -1,24 +1,21 @@
-# README
+# Instagram Clone (InstaClone) App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A clone of Instagram and its basic functionality.
 
-Things you may want to cover:
+## Live Link
 
-* Ruby version
 
-* System dependencies
+## Author
 
-* Configuration
+👤 **Osong Agberndifor**
 
-* Database creation
+- Github: [Osong Agberndifor](https://github.com/OA7)
+- Twitter: [Osong Agberndifor](https://twitter.com/Osong17)
+- Linkedin: [Osong Agberndifor](https://linkedin.com/osong-agberndifor)
 
-* Database initialization
 
-* How to run the test suite
+## 🤝 Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Contributions, issues and feature requests are welcome!
 
-* Deployment instructions
-
-* ...
+Feel free to check the [Issues page](https://github.com/OA7/IG-clone/issues).

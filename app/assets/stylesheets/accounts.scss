@@ -16,6 +16,9 @@ body {
   padding: 15px;
   border: 1px solid #999;
   border-radius: 3px;
+  max-height: 350px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .profile-pic {

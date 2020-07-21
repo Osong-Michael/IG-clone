@@ -1,7 +1,8 @@
-<% post.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <div class="comments">
+  <%= link_to profile_picture(comment.account, 35), profile_path(comment.account) %>
     <strong><%= comment.account.username %></strong>
     <%= comment.comment %>
-    <p class="text-muted"><%= time_ago_in_words comment.created_at %> ago</p>
+    <p class="text-muted push"><%= time_ago_in_words comment.created_at %> ago</p>
   </div>
 <% end %>

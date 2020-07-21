@@ -8,7 +8,6 @@ module AccountsHelper
   def actual_user?(account_id)
     account_signed_in? && current_account.id == account_id
   end
-  
 end
 
 

@@ -10,7 +10,11 @@
       <% if account_signed_in? %>
         <%= render 'layouts/account_nav' %>
       <% else %>
-        <%= render 'layouts/public_nav' %>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_account_session_path, class: 'nav-link' %>
+          </li>
+        </ul>
       <% end %>
     </div>
   </div>

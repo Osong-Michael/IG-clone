@@ -6,4 +6,5 @@ class Comment < ApplicationRecord
   validates :comment, presence: true
   # validates_uniqueness_of :account_id
   # validates_uniqueness_of :post_id
+  attr_accessor :return_to
 end

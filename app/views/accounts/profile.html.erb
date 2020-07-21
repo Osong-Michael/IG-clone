@@ -5,8 +5,13 @@
     </div>
 
     <div class="col-8 text-left">
-      <h1><%= @account.fullname%></h1>
-      <%= link_to 'Edit Profile', edit_account_registration_path, class: 'btn btn-secondary' if actual_user?(@account.id) %>
+    <div class="row">
+      <div class="col-6">
+        <%= link_to 'Edit Profile', edit_account_registration_path, class: 'btn btn-muted btn-custom float-right' if actual_user?(@account.id) %>
+        <h1><%= @account.fullname%></h1>
+      </div>
+    </div>
+      
       
       <div class="row profile-stats">
         <div class="col-4">

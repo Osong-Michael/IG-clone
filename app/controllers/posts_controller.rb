@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_account!
+  before_action :set_post, only: [:show]
 
   def new
     @post = Post.new
@@ -24,6 +25,10 @@ class PostsController < ApplicationController
 
 
   private 
+
+  def set_post
+    @post = Post.find(params[:id]) if params[:id].present?
+  end
 
   def post_params
     params.require(:post).permit(:description, :image, :image_cache)

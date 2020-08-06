@@ -3,7 +3,7 @@
 A clone of Instagram and its basic functionality.
 
 ## Live Link
-
+[Try it out](https://lit-sea-05746.herokuapp.com/)
 
 ## Author
 
